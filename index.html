@@ -171,8 +171,7 @@ var ftype = "NOR",
 	file_size_a = 128,
 	file_size_b = 111,
 	// End Flash Dumper Variables
-	rb_addr, readlen_io, sc_addr, readlen_addr, dev_handle_addr, fopen_addr, vsh_addr,
-	first8Bytes;
+	rb_addr, readlen_io, sc_addr, readlen_addr, dev_handle_addr, fopen_addr, vsh_addr;
 function updateDumpPath()
 {
 	dump_path = document.getElementById("usbList").value;
@@ -832,8 +831,7 @@ function checkVsh()
 	if(vshchk.hashCode() != '-579244910')
 	{
 		showResult("<h3><span style='color:red'>You cannot use this tool because you have already installed CFW!</span></h3>" +
-			"<h3>Hash value: <strong>" + vshchk.hashCode() + "</strong></h3>" +
-			"<h3>Bytes:" + first8Bytes "</h3>");
+			"<h3>Hash value: <strong>" + vshchk.hashCode() + "</strong></h3>");
 	}
 	else
 	{
