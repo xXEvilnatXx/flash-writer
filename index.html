@@ -378,7 +378,7 @@ function checkMemory(address, size, len)
 	if(document.getElementById('exploit'))
 	{
 		readMemory(address, size);
-		const data = document.getElementById('exploit').style.src.substr(6, len);
+		var data = document.getElementById('exploit').style.src.substr(6, len);
 		first8Bytes = data.substr(0, 8);
 		return document.getElementById('exploit').style.src.substr(6,len);
 	}
