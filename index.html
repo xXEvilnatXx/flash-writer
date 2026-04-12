@@ -382,7 +382,6 @@ function checkMemory(address, size, len)
 }
 function trigger(exploit_addr){
 	if(document.getElementById('trigger')){document.getElementById("trigger").innerHTML = -parseFloat("NAN(ffffe" + exploit_addr.toString(16) + ")");}
-	if (document.getElementById('trigger').innerHTML.indexOf("NaN") != -1) {HFWmsg()}
 }
 function load_check()
 {
