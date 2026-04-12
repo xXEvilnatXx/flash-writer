@@ -89,7 +89,6 @@ table, th, td {
   <div id="exploit" style="display: none;"></div>
   <div id="trigger" style="display: none;"></div>
 <script>
-var first8Bytes = 0;
 var ftype = "NOR",
 	chk, vshchk, jump_1_addr_2, jump_2_addr_2, jump_2_2, jump_1_2, xtra_data, stack_frame, stack_frame2, stack_frame2_addr, jump_2, jump_1, xtra_data_addr, stack_frame_addr, jump_2_addr, jump_1_addr, stack_frame3, stack_frame3_addr, jump_1_addr_3, jump_2_addr_3, stack_frame4, stack_frame4_addr, jump_1_addr_4, jump_2_addr_4, offset_array = [],
 	t_out = 0,
@@ -172,7 +171,8 @@ var ftype = "NOR",
 	file_size_a = 128,
 	file_size_b = 111,
 	// End Flash Dumper Variables
-	rb_addr, readlen_io, sc_addr, readlen_addr, dev_handle_addr, fopen_addr, vsh_addr;
+	rb_addr, readlen_io, sc_addr, readlen_addr, dev_handle_addr, fopen_addr, vsh_addr,
+	first8Bytes;
 function updateDumpPath()
 {
 	dump_path = document.getElementById("usbList").value;
@@ -379,7 +379,6 @@ function checkMemory(address, size, len)
 	{
 		readMemory(address, size);
 		var data = document.getElementById('exploit').style.src.substr(6, len);
-		 <!-- first8Bytes = data.substr(0, 8); -->
 		return document.getElementById('exploit').style.src.substr(6,len);
 	}
 }
