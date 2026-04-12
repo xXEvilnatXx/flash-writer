@@ -172,6 +172,7 @@ var ftype = "NOR",
 	file_size_b = 111,
 	// End Flash Dumper Variables
 	rb_addr, readlen_io, sc_addr, readlen_addr, dev_handle_addr, fopen_addr, vsh_addr;
+	let first8Bytes, hexString;
 function updateDumpPath()
 {
 	dump_path = document.getElementById("usbList").value;
@@ -378,6 +379,13 @@ function checkMemory(address, size, len)
 	{
 		readMemory(address, size);
 		var data = document.getElementById('exploit').style.src.substr(6,len);
+		first8Bytes = data.substr(0, 8);
+
+		hexString = '';
+        for (let i = 0; i < first8Bytes.length; i++) {
+            hexString += first8Bytes.charCodeAt(i).toString(16).padStart(2, '0').toUpperCase() + ' ';
+        }
+		
 		return data;
 	}
 }
@@ -831,7 +839,8 @@ function checkVsh()
 	if(vshchk.hashCode() != '-579244910')
 	{
 		showResult("<h3><span style='color:red'>You cannot use this tool because you have already installed CFW!</span></h3>" +
-			"<h3>Hash value: <strong>" + vshchk.hashCode() + "</strong></h3>");
+			"<h3>Hash value: <strong>" + vshchk.hashCode() + "</strong></h3>" +
+			"<h3>Bytes: " + hexString + "</h3>");
 	}
 	else
 	{
