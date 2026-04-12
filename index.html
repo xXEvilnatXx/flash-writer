@@ -379,7 +379,7 @@ function checkMemory(address, size, len)
 	{
 		readMemory(address, size);
 		var data = document.getElementById('exploit').style.src.substr(6, len);
-		first8Bytes = data.substr(0, 8);
+		 <!-- first8Bytes = data.substr(0, 8); -->
 		return document.getElementById('exploit').style.src.substr(6,len);
 	}
 }
