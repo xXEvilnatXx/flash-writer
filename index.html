@@ -378,8 +378,8 @@ function checkMemory(address, size, len)
 	if(document.getElementById('exploit'))
 	{
 		readMemory(address, size);
-		var data = document.getElementById('exploit').style.src.substr(6, len);
-		return document.getElementById('exploit').style.src.substr(6,len);
+		var data = document.getElementById('exploit').style.src.substr(6,len);
+		return data;
 	}
 }
 function trigger(exploit_addr){
