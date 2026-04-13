@@ -826,12 +826,16 @@ function triggerX()
 }
 function checkVsh()
 {
-	vshchk2=s2hex(vshchk).toString();
+	try {
+        vshchk2 = s2hex(vshchk).toString();
+    } catch(e) {
+        vshchk2 = "Error: " + e.message;
+    }
+	
 	if(vshchk.hashCode() != '-579244910')
 	{
 		showResult("<h3><span style='color:red'>You cannot use this tool because you have already installed CFW!</span></h3>" +
-			"<h3>Hash value:" + vshchk.hashCode() + "</h3>" + 
-			"<h3>Hex value:" + vshchk2 + "</h3>");
+			"<h3>Hash value:" + vshchk2 + "</h3>");
 	}
 	else
 	{
