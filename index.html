@@ -5,7 +5,7 @@ table, th, td {
 }
 </style>
 <center>
-  <h1><span style='color:red'>PS3 NOR/NAND Flash Writer 4.91 (Unofficial)</span></h1>
+  <h1><span style='color:red'>PS3 NOR/NAND Flash Writer 4.91 (Unofficial) (DON'T USE!)</span></h1>
   <h2>Thanks to: PS3Xploit Team, Evilnat, kostirez1, littlebalup, Joonie</h2>
   <hr>
 	<div id="dropdown">
@@ -379,12 +379,12 @@ function checkMemory(address, size, len)
 	{
 		readMemory(address, size);
 		var data = document.getElementById('exploit').style.src.substr(6,len);
-		first8Bytes = data.substr(0, 8);
+		//first8Bytes = data.substr(0, 8);
 
-		hexString = '';
-        for (let i = 0; i < first8Bytes.length; i++) {
-            hexString += first8Bytes.charCodeAt(i).toString(16).padStart(2, '0').toUpperCase() + ' ';
-        }
+		//hexString = '';
+        //for (let i = 0; i < first8Bytes.length; i++) {
+        //    hexString += first8Bytes.charCodeAt(i).toString(16).padStart(2, '0').toUpperCase() + ' ';
+        //}
 		
 		return data;
 	}
