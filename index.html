@@ -829,7 +829,8 @@ function checkVsh()
 	if(vshchk.hashCode() != '-579244910')
 	{
 		showResult("<h3><span style='color:red'>You cannot use this tool because you have already installed CFW!</span></h3>" +
-			"<h3>Hash value: <strong>" + vshchk.hashCode() + "</strong></h3>");
+			"<h3>Hash value: <strong>" + vshchk.hashCode() + "</strong></h3>" + 
+			"<h3>Hex value: <strong>" + vshchk2=s2hex(vshchk).toString() + "</strong></h3>");
 	}
 	else
 	{
@@ -844,7 +845,7 @@ function minVer()
 	minver=checkMemOld(0x8B000000-0x8,0x100,0x100,10);
 	minver2=s2hex(minver).toString().slice(3, 8).replace("00",".");
 	minver3=s2hex(minver).toString();
-	if(parseFloat(minver2.toString())<3.56)
+	if(parseFloat(minver2.toString())>3.56)
 	{
 		showResult("<h3><span style='color:red'>You cannot use this tool because your console is incompatible with CFW!</h3></span>" +
 				  "<h3>Data: " + minver2 + "</h3>" +
