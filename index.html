@@ -865,11 +865,11 @@ function checkPatch()
 }
 function checkHash()
 {
-	if(chk.hashCode() != '000000041') // 539371423
+	if(chk.hashCode() != '539371423') // 539371423 // 000000041
 	{
 		showResult("<h3><span style='color:red'>Patch operation aborted due to patch file hash mismatch!</span></h3>" +
 				  "<h3>Hash value:" + chk.hashCode() + "</h3>");
-		//alert(chk.hashCode());
+		alert(chk);
 	}
 	else
 	{
