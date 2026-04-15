@@ -91,7 +91,7 @@ table, th, td {
   <div id="trigger" style="display: none;"></div>
 <script>
 var ftype = "NOR",
-	chk, vshchk, vshchk2, jump_1_addr_2, jump_2_addr_2, jump_2_2, jump_1_2, xtra_data, stack_frame, stack_frame2, stack_frame2_addr, jump_2, jump_1, xtra_data_addr, stack_frame_addr, jump_2_addr, jump_1_addr, stack_frame3, stack_frame3_addr, jump_1_addr_3, jump_2_addr_3, stack_frame4, stack_frame4_addr, jump_1_addr_4, jump_2_addr_4, offset_array = [],
+	chk, vshchk, jump_1_addr_2, jump_2_addr_2, jump_2_2, jump_1_2, xtra_data, stack_frame, stack_frame2, stack_frame2_addr, jump_2, jump_1, xtra_data_addr, stack_frame_addr, jump_2_addr, jump_1_addr, stack_frame3, stack_frame3_addr, jump_1_addr_3, jump_2_addr_3, stack_frame4, stack_frame4_addr, jump_1_addr_4, jump_2_addr_4, offset_array = [],
 	t_out = 0,
 	search_max_threshold, search_base, search_size, search_base_off, search_size_ext, gtemp_addr = 0x8D000000,
 	total_loops = 0,
@@ -829,8 +829,7 @@ function checkVsh()
 {	
 	if(vshchk.hashCode() != '100679652')
 	{
-		showResult("<h3><span style='color:red'>You cannot use this tool because you have already installed CFW!</span></h3>" +
-			"<h3>Hash value:" + vshchk.hashCode() + "</h3>");
+		showResult("<h3><span style='color:red'>You cannot use this tool because you have already installed CFW!</span></h3>");
 	}
 	else
 	{
@@ -847,9 +846,7 @@ function minVer()
 	minver3=s2hex(minver).toString();
 	if(parseFloat(minver2.toString())>3.56)
 	{
-		showResult("<h3><span style='color:red'>You cannot use this tool because your console is incompatible with CFW!</h3></span>" +
-				  "<h3>Data: " + minver2 + "</h3>" +
-				  "<h3>Data: " + minver3 + "</h3>");
+		showResult("<h3><span style='color:red'>You cannot use this tool because your console is incompatible with CFW!</h3></span>");
 	}
 	else
 	{
@@ -868,7 +865,7 @@ function checkHash()
 	if(chk.hashCode() != '1984323195') // 539371423 // 000000041
 	{
 		showResult("<h3><span style='color:red'>Patch operation aborted due to patch file hash mismatch!</span></h3>");
-		alert(chk.hashCode());
+		//alert(chk.hashCode());
 	}
 	else
 	{
