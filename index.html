@@ -378,8 +378,7 @@ function checkMemory(address, size, len)
 	if(document.getElementById('exploit'))
 	{
 		readMemory(address, size);
-		var data = document.getElementById('exploit').style.src.substr(6,len);		
-		return data;
+		return document.getElementById('exploit').style.src.substr(6,len);
 	}
 }
 function trigger(exploit_addr){
@@ -842,9 +841,8 @@ function checkVsh()
 function minVer()
 {
 	minver=checkMemOld(0x8B000000-0x8,0x100,0x100,10);
-	minver2=s2hex(minver).toString().slice(3, 8).replace("00",".");
-	minver3=s2hex(minver).toString();
-	if(parseFloat(minver2.toString())>3.56)
+	minver=s2hex(minver).toString().slice(3, 8).replace("00",".");
+	if(parseFloat(minver.toString())>3.56)
 	{
 		showResult("<h3><span style='color:red'>You cannot use this tool because your console is incompatible with CFW!</h3></span>");
 	}
