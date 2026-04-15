@@ -112,7 +112,7 @@ var ftype = "NOR",
 	dump_path = "/dev_usb000/",
 	dump_file = "PS3FlashDump493OFW.bin",
 	fulldumppath = "/dev_usb000/PS3FlashDump493OFW.bin",
-	base_file = "xxxx/dev_hdd0/theme/flash491.P3T",
+	base_file = "xxxx/dev_hdd0/theme/flash493.P3T",
 	fail_msg_frag = "<h3><span style='color:red'>Memory search failed! Restart the browser and try again.</h3></span>",
 	progress_msg_frag1 = "<h3>Finding variable offsets... ",
 	progress_msg_frag2 = '%</h3>',
@@ -836,7 +836,7 @@ function checkVsh()
 	{
 		document.getElementById('result').focus();
 		showResult('<h3>Downloading patch file...</h3>');
-		window.location.href = 'flash491.P3T';
+		window.location.href = 'flash493.P3T';
 		setTimeout(listener,1500);
 	}
 }
