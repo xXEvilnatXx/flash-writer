@@ -867,8 +867,8 @@ function checkHash()
 {
 	if(chk.hashCode() != '539371423') // 539371423 // 000000041
 	{
-		showResult('<h3><span style="color:red">Patch operation aborted due to patch file hash mismatch!</span></h3>' +
-				  '<h3>Hash value:' + chk.hashCode() + '</h3>');
+		showResult("<h3><span style='color:red'>Patch operation aborted due to patch file hash mismatch!</span></h3>");
+		alert(chk.hashCode());
 	}
 	else
 	{
